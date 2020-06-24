@@ -32,11 +32,11 @@ public class ProjectService {
         return weaponRepository.findByAttributeContainingIgnoreCase(attribute);
     }
 
-    public Quest getQuestsByName(String name) {
+    public Quest getQuestByName(String name) {
         return questRepository.findByNameContainingIgnoreCase(name);
     }
 
-    public List<Weapon> getWeaponByName(String name) {
+    public List<Weapon> getWeaponsByName(String name) {
         return weaponRepository.findByNameContainingIgnoreCase(name);
     }
 
@@ -47,6 +47,18 @@ public class ProjectService {
         quest.setKeyword(request.getKeyword());
 
         return questRepository.insert(quest);
+    }
+
+    public Quest replaceQuest(String name, QuestRequest request) {
+        Quest oldQuest = getQuestByName(name);
+
+        Quest newQuest = new Quest();
+        newQuest.setId(oldQuest.getId());
+        newQuest.setName(request.getName());
+        newQuest.setAttribute(request.getAttribute());
+        newQuest.setKeyword(request.getKeyword());
+
+        return questRepository.save(newQuest);
     }
 
     public void deleteQuest(String name) {
