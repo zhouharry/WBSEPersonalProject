@@ -11,13 +11,16 @@ public class WeaponRequest {
 	private String attribute;
 	
 	@NotEmpty(message = "Weapon type isn't provided. ")
-	private String type;
+	private String weaponType;
 	
 	@NotEmpty(message = "Quest name isn't provided. ")
 	private String name;
 
 	@NotEmpty(message = "Picture name isn't provided. ")
 	private String picName;
+
+	@NotEmpty(message = "Weapon ID isn't provided. ")
+	private String weaponId;
 	
 	public String getSeries() {
     	return series;
@@ -35,12 +38,12 @@ public class WeaponRequest {
     	this.attribute = attribute;
     }
     
-    public String getType() {
-    	return type;
+    public String getWeaponType() {
+    	return weaponType;
     }
     
-    public void setType(String type) {
-    	this.type = type;
+    public void setWeaponType(String weaponType) {
+    	this.weaponType = weaponType;
     }
     
     public String getName() {
@@ -55,7 +58,15 @@ public class WeaponRequest {
 		return picName;
 	}
 
-	public void setPic_name(String picName) {
+	public void setPicName(String picName) {
 		this.picName = picName;
+	}
+
+	public String getWeaponId() {
+		return weaponId;
+	}
+
+	public void setWeaponId(String weaponId) {
+		this.weaponId = weaponId;
 	}
 }

@@ -2,8 +2,6 @@ package ntou.wbse.personalproject.repository;
 
 import ntou.wbse.personalproject.entity.Quest;
 
-import ntou.wbse.personalproject.entity.QuestQueryParameter;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

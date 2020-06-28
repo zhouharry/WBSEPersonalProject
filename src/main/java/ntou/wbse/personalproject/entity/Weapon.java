@@ -7,15 +7,24 @@ public class Weapon {
     private String id;
     private String series;
     private String attribute;
-    private String type;
+    private String weaponType;
     private String name;
     private String picName;
+    private String weaponId;
+
+    public String getWeaponId() {
+        return weaponId;
+    }
+
+    public void setWeaponId(String weaponId) {
+        this.weaponId = weaponId;
+    }
 
     public String getPicName() {
         return picName;
     }
 
-    public void setPic_name(String picName) {
+    public void setPicName(String picName) {
         this.picName = picName;
     }
     
@@ -51,22 +60,23 @@ public class Weapon {
     	this.attribute = attribute;
     }
     
-    public String getType() {
-    	return type;
+    public String getWeaponType() {
+    	return weaponType;
     }
     
-    public void setType(String type) {
-    	this.type = type;
+    public void setWeaponType(String weaponType) {
+    	this.weaponType = weaponType;
     }
     
     @Override
     public String toString() {
-    	return "weapon{" + 
-                "id : '" + id + "'" +
-    			"series : '" + series + "'" +
-                "attribute : '" + attribute + "'" +
-    			"type : '" + type + "'" +
-                "picture name : '" + picName + "'" +
+    	return "weapon{ " +
+                "id : '" + id + "', " +
+    			"series : '" + series + "', " +
+                "attribute : '" + attribute + "', " +
+    			"weaponType : '" + weaponType + "', " +
+                "picture name : '" + picName + "' " +
+                "weapon ID : " + weaponId + "' " +
                 "}";
     }
 }

@@ -11,7 +11,11 @@ import java.util.List;
 @Repository
 public interface WeaponRepository extends MongoRepository<Weapon, String> {
     
-	List<Weapon> findByNameContainingIgnoreCase(String questName);
+	List<Weapon> findByWeaponTypeContainingIgnoreCase(String weaponType);
 	
 	List<Weapon> findByAttributeContainingIgnoreCase(String attribute);
+
+	List<Weapon> findByAttributeAndWeaponTypeOrderByAttribute(String attribute, String type);
+
+	Weapon findByWeaponIdContainingIgnoreCase(String weaponId);
 }
